@@ -28,21 +28,20 @@ struct QuestionView: View {
                         .font(.title)
                     Image(quizManager.country)
                         .resizable()
-                        .frame(width: 300, height: 300)
+                        .frame(width: 300, height: 200)
                     ForEach(quizManager.answerChoices) { answer in
                         AnswerRow(Answer: answer)
                             .environmentObject(quizManager)
                     }
+                }
                     Button {
                         quizManager.goToNextQuestion()
                     } label: {
                         CustomButton(text: "next", background: quizManager.answerSelected ? .yellow : .gray)
                     }
                     .disabled(!quizManager.answerSelected)
-                    
+                Spacer()
                 }
-            }
-            
             .padding()
             .frame(width: .infinity, height: .infinity)
             .background(.cyan)

@@ -25,7 +25,7 @@ class QuizManager: ObservableObject {
         index = 0
         score = 0
         progress = 0.0
-        playingGame = false
+        playingGame = true
         goToNextQuestion()
     }
     func goToNextQuestion() {
@@ -39,7 +39,7 @@ class QuizManager: ObservableObject {
             
         }
         else {
-            playingGame = true
+            playingGame = false
         }
     }
     func selectAnswer(answer: Answer) {
